@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2018"
 authors = ["Markus Reiter <me@reitermark.us>"]
 license = "MIT OR Apache-2.0"
+readme = "ReadMe.md"
 description = "A `no_std` library for parsing M-Bus telegrams."
 documentation = "https://docs.rs/mbusparse"
 repository = "https://github.com/reitermarkus/mbusparse-rs"
