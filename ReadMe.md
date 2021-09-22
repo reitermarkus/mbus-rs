@@ -1,4 +1,4 @@
-# `mbus`
+# `mbusparse`
 
-[![Crates.io](https://img.shields.io/crates/v/mbus.svg)](https://crates.io/crates/mbus)
-[![Documentation](https://docs.rs/mbus/badge.svg)](https://docs.rs/mbus)
+[![Crates.io](https://img.shields.io/crates/v/mbusparse.svg)](https://crates.io/crates/mbusparse)
+[![Documentation](https://docs.rs/mbusparse/badge.svg)](https://docs.rs/mbusparse)
