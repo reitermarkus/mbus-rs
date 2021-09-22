@@ -16,11 +16,13 @@ jobs:
         with:
           toolchain: stable
           override: true
-      - uses: actions-rs/cargo@v1
+      - name: login
+        uses: actions-rs/cargo@v1
         with:
           command: login
           args: ${{ secrets.CRATES_IO_TOKEN }}
-      - uses: actions-rs/cargo@v1
+      - name: publish
+        uses: actions-rs/cargo@v1
         with:
           command: publish
           args: --dry-run
