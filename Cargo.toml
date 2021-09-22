@@ -7,8 +7,8 @@ license = "MIT OR Apache-2.0"
 readme = "ReadMe.md"
 description = "A `no_std` library for parsing M-Bus telegrams."
 documentation = "https://docs.rs/mbusparse"
-repository = "https://github.com/reitermarkus/mbusparse-rs"
-homepage = "https://github.com/reitermarkus/mbusparse-rs"
+repository = "https://github.com/reitermarkus/mbusparse"
+homepage = "https://github.com/reitermarkus/mbusparse"
 
 [dependencies]
 nom = "7.0"
