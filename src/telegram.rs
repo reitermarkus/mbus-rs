@@ -107,7 +107,8 @@ impl<'ud> Telegram<'ud> {
     }
 
     if let Some(control_information) = control_information {
-      if payload.len() > 0 {
+      let payload_len = payload.len();
+      if payload_len > 0 {
         Ok((input, Self::LongFrame { control, address, control_information, user_data: payload }))
       } else {
         Ok((input, Self::ControlFrame { control, address, control_information }))
