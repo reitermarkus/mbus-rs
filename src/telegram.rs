@@ -184,28 +184,24 @@ mod test {
 
   #[test]
   fn test_parse() {
-    let mut telegrams = vec![];
-    let mut input = &TELEGRAMS[..];
+    let input = &TELEGRAMS[..];
 
-    for _ in 0..2 {
-      let (next_input, telegram) = Telegram::parse(input).unwrap();
-      input = next_input;
-      telegrams.push(telegram);
-    }
+    let (input, telegram) = Telegram::parse(input).unwrap();
+    assert_eq!(telegram, Telegram::LongFrame {
+      control: Control::SndUd { fcb: false },
+      address: Address::Broadcast,
+      control_information: 0x00,
+      user_data: &TELEGRAMS[7..254],
+    });
 
-    assert_eq!(telegrams, vec![
-      Telegram::LongFrame {
-        control: Control::SndUd { fcb: false },
-        address: Address::Broadcast,
-        control_information: 0x00,
-        user_data: &TELEGRAMS[7..254],
-      },
-      Telegram::LongFrame {
-        control: Control::SndUd { fcb: false },
-        address: Address::Broadcast,
-        control_information: 0x11,
-        user_data: &TELEGRAMS[263..374],
-      },
-    ])
+    let (input, telegram) = Telegram::parse(input).unwrap();
+    assert_eq!(telegram, Telegram::LongFrame {
+      control: Control::SndUd { fcb: false },
+      address: Address::Broadcast,
+      control_information: 0x11,
+      user_data: &TELEGRAMS[263..374],
+    });
+
+    assert!(input.is_empty());
   }
 }
