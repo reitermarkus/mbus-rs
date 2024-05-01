@@ -11,7 +11,7 @@ repository = "https://github.com/reitermarkus/mbusparse"
 homepage = "https://github.com/reitermarkus/mbusparse"
 
 [dependencies]
-nom = { version = "7.1", default-features = false }
+nom = { version = "7.1.3", default-features = false }
 
 [features]
 default = ["std"]
